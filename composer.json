@@ -1,4 +1,10 @@
 {
+    "name": "js-transformer/js-transformer",
+    "type": "library",
+    "keywords": ["js-transformer"],
+    "description": "",
+    "license": "MIT",
+    "homepage": "https://github.com/kylekatarnls/js-transformer-php-wrap",
     "require": {
         "nodejs-php-fallback/nodejs-php-fallback": "^1.2"
     },
