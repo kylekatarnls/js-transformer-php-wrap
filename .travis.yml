@@ -1,0 +1,43 @@
+language: php
+
+dist: trusty
+
+sudo: required
+
+php:
+  - 5.4
+  - 5.5
+  - 5.6
+  - 7.0
+  - 7.1
+  - 7.2
+  - hhvm
+
+matrix:
+  include:
+    - php: 5.3
+      dist: precise
+
+env:
+  - TRAVIS_NODE_VERSION="7"
+
+install:
+  - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION
+  - npm install
+
+before_script:
+  - travis_retry composer self-update
+  - travis_retry composer install --no-interaction --prefer-source --dev
+
+script:
+  - vendor/bin/phpunit --verbose --coverage-text --coverage-clover=coverage.xml
+
+after_script:
+  - vendor/bin/test-reporter --coverage-report coverage.xml
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+addons:
+  code_climate:
+    repo_token: eec94e4e24921f62b8ad23617dfc0d94a859d2f9cc74bc8935168815d3ab879a
