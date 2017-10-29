@@ -2,7 +2,7 @@
     "name": "js-transformer/js-transformer",
     "type": "library",
     "keywords": ["js-transformer"],
-    "description": "",
+    "description": "Call any js-transformer package through PHP",
     "license": "MIT",
     "homepage": "https://github.com/kylekatarnls/js-transformer-php-wrap",
     "require": {
@@ -26,8 +26,8 @@
         ]
     },
     "autoload": {
-        "psr-4": {
-            "": "./src"
+        "psr-0": {
+            "JsTransformer\\": "./src"
         }
     }
 }

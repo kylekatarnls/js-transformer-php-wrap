@@ -3,7 +3,6 @@
 namespace Test\JsTransformer;
 
 use JsTransformer\JsTransformer;
-use JsTransformer\NodeEngine;
 use NodejsPhpFallback\NodejsPhpFallback;
 use PHPUnit_Framework_TestCase;
 

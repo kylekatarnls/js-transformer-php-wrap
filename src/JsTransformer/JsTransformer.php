@@ -41,6 +41,11 @@ class JsTransformer
             escapeshellarg($package) . ' ' .
             escapeshellarg($file);
 
-        return $this->nodeEngine->nodeExec($script, $fallback);
+        $result = $this->nodeEngine->nodeExec($script, $fallback);
+        if (mb_substr($result,  -1) === "\n") {
+            $result = mb_substr($result, 0, -1);
+        }
+
+        return $result;
     }
 }
