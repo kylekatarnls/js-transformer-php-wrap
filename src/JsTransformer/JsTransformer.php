@@ -42,7 +42,7 @@ class JsTransformer
             escapeshellarg($file);
 
         $result = $this->nodeEngine->nodeExec($script, $fallback);
-        if (mb_substr($result,  -1) === "\n") {
+        if (mb_substr($result, -1) === "\n") {
             $result = mb_substr($result, 0, -1);
         }
 

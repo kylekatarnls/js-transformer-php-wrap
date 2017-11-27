@@ -32,7 +32,7 @@ class JsTransformerTest extends TestCase
             ),
         )));
 
-        self::assertSame("a .foo{color:red}", $result);
+        self::assertSame('a .foo{color:red}', $result);
     }
 
     public function testGetNodeEngine()
