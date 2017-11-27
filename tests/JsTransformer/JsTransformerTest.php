@@ -4,9 +4,9 @@ namespace Test\JsTransformer;
 
 use JsTransformer\JsTransformer;
 use NodejsPhpFallback\NodejsPhpFallback;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 
-class JsTransformerTest extends PHPUnit_Framework_TestCase
+class JsTransformerTest extends TestCase
 {
     public function testExecute()
     {
